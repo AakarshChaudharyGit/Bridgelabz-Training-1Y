@@ -13,7 +13,6 @@ public class EmployeeBonus {
         double totalOldSalary = 0.0;
         double totalNewSalary = 0.0;
 
-        // Input salary and years of service
         for (int i = 0; i < 10; i++) {
             System.out.print("Enter salary of employee " + (i + 1) + ": ");
             salary[i] = sc.nextDouble();
@@ -23,25 +22,20 @@ public class EmployeeBonus {
 
             if (salary[i] <= 0 || service[i] < 0) {
                 System.out.println("Invalid input. Enter again.");
-                i--; // decrement index
+                i--;
             }
         }
 
-        // Calculate bonus and new salary
         for (int i = 0; i < 10; i++) {
             if (service[i] > 5)
                 bonus[i] = salary[i] * 0.05;
             else
                 bonus[i] = salary[i] * 0.02;
-
             newSalary[i] = salary[i] + bonus[i];
-
             totalBonus += bonus[i];
             totalOldSalary += salary[i];
             totalNewSalary += newSalary[i];
         }
-
-        // Display results
         System.out.println("Total Bonus Paid = " + totalBonus);
         System.out.println("Total Old Salary = " + totalOldSalary);
         System.out.println("Total New Salary = " + totalNewSalary);
