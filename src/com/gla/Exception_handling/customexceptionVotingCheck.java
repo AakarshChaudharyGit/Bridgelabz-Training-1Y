@@ -1,6 +1,6 @@
 package com.gla.Exception_handling;
 
-class CustomException extends Exception {
+class CustomException extends Exception{
     CustomException(String message) {
         super(message);
     }
