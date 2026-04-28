@@ -1,4 +1,4 @@
-package stream_api;
+package com.gla.stream_api;
 
 public class streamexample {
 

@@ -1,4 +1,4 @@
-package function_interface;
+package com.gla.function_interface;
 
 public class Main {
     static void main(String[] args) {
