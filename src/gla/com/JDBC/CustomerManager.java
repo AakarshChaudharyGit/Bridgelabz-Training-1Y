@@ -1,0 +1,25 @@
+package gla.com.JDBC;
+
+import java.sql.*;
+
+public class CustomerManager {
+    public static void main(String[] args) throws Exception {
+        Connection con = DBConnection.getConnection();
+        Statement st = con.createStatement();
+
+        st.execute("CREATE TABLE IF NOT EXISTS customers(id INT, name VARCHAR(50), phone VARCHAR(15))");
+
+        st.executeUpdate("INSERT INTO customers VALUES (1,'Rahul','9999999999')");
+
+        ResultSet rs = st.executeQuery("SELECT * FROM customers WHERE name LIKE '%Rahul%'");
+        while (rs.next()) {
+            System.out.println(rs.getString("name"));
+        }
+
+        st.executeUpdate("UPDATE customers SET phone='8888888888' WHERE id=1");
+
+        st.executeUpdate("DELETE FROM customers WHERE id=2");
+
+        con.close();
+    }
+}
